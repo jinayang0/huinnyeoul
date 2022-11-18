@@ -1,0 +1,473 @@
+@charset "utf-8";
+
+/*디자인하우스체*/
+@font-face {
+  font-family: "designhouseOTFLight00";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/designhouseOTFLight00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*noto sans*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+body {
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  line-height: 26px;
+  min-width: 1450px;
+  color: #2d2d2d;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+header {
+  background-color: #fff;
+  /*box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);*/
+  border-bottom: #cecece 1px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.header_inner {
+  margin: 0 auto;
+  width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.header_inner > ul {
+  display: flex;
+}
+
+#gnb {
+  text-align: center;
+}
+
+#gnb > li {
+  height: 100px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+#gnb > li > a:hover {
+  color: #6ab69b;
+}
+
+.sub > li {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.sub {
+  position: absolute;
+  top: 100%;
+  /*포지션의 기준이 된 gnb>li높이 바로 밑으로 간다.*/
+  left: 0;
+  width: 100%;
+  /*포지션 앱솔루트 사용으로, sub가 가진 한줄 전체를 차지하는 속성이 사라져서 다시 지정해줌.*/
+  z-index: 40;
+}
+
+#gnb > li {
+  position: relative;
+  /*sub포지션의 기준*/
+}
+
+.sub > li {
+  color: #fff;
+  padding: 16px 0;
+}
+
+.sub > li:hover {
+  color: #6ab69b;
+}
+
+.sub {
+  display: none;
+  /*sub가 html에 존재하지 않는것처럼 사라지게 해줌.*/
+}
+
+.sub_box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 290px;
+  background-color: #405f87e0;
+  z-index: 30;
+  display: none;
+}
+
+.sub_box_inner {
+  margin: 0 auto;
+  padding: 18px 0px;
+  width: 1320px;
+}
+
+.sub_box_inner ul {
+  display: flex;
+  margin-right: 350px;
+  justify-content: flex-end;
+}
+
+.sub_box_inner li {
+  margin-left: 18px;
+}
+
+.header_inner .go_btn li {
+  padding: 0 10px;
+}
+
+.logo {
+  float: left;
+}
+
+a#top_btn {
+  position: fixed;
+  bottom: 50px;
+  right: 2%;
+  display: none;
+  width: 65px;
+  height: 65px;
+  padding-top: 18px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  z-index: 999;
+  border: 1px solid #405f87;
+  background-color: #fff;
+  color: #405f87;
+}
+
+a#top_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+#container {
+  background-color: #fff;
+}
+
+.mb_inner,
+.footer_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding: 80px 0;
+}
+
+.mb {
+  margin-top: 100px;
+  /*fixde된 헤더의 높이만큼 밑으로 내려서 헤더와 배너가 겹치지 않게 설정한다.*/
+  width: 100%;
+  background: url(../images/shop_banner.png) no-repeat top;
+  height: 660px;
+}
+
+.mb_text {
+  text-align: left;
+  color: #fff;
+}
+
+.mb_text h2 {
+  padding: 120px 0 0 35px;
+  font-size: 36px;
+  line-height: 52px;
+  font-weight: normal;
+}
+
+.mb_text p {
+  padding: 24px 0 0 35px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.mn_btn_list_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding-top: 80px;
+}
+
+.btn_list {
+  margin: 0 auto;
+  width: 814px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.btn_list .btn {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #afafaf;
+}
+
+.btn_list li p {
+  margin-top: 14px;
+}
+
+.btn_list .btn:hover {
+  background-color: #405f87;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.active .btn {
+  background-color: #405f87;
+}
+
+.under_line {
+  width: 1320px;
+  height: 1px;
+  background-color: #405f87;
+  margin-top: 50px;
+}
+
+.shop_list_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding-bottom: 20px;
+}
+
+.shop_list_inner h5 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.products_list {
+  margin: 0 auto;
+  width: 1320px;
+}
+
+.products_list > li {
+  float: left;
+  width: 300px;
+  margin: 90px 15px 0px 15px;
+}
+
+.black_box {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+}
+
+.products_list .hover_box {
+  position: relative;
+  overflow: hidden;
+}
+
+.products_list .hover_box:hover .black_box {
+  opacity: 1;
+  top: 0;
+  transition: all 0.5s;
+}
+
+.black_box ul {
+  display: flex;
+  justify-content: center;
+}
+
+.black_box li {
+  margin-top: 120px;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.black_box li:hover {
+  background-color: #afafaf;
+}
+
+.black_box .cart {
+  margin-right: 40px;
+}
+
+.price_box {
+  margin-top: 24px;
+}
+
+.price_box p {
+  font-size: 16px;
+}
+
+.price_box .price {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.price_box .percent {
+  color: #405f87;
+}
+
+.price_box .cost {
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: line-through;
+  color: #cecece;
+}
+
+.products_list li:nth-child(1),
+.products_list li:nth-child(4),
+.products_list li:nth-child(5),
+.products_list li:nth-child(6),
+.products_list li:nth-child(7),
+.products_list li:nth-child(9) {
+  position: relative;
+}
+
+.best_icon {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+}
+
+.sale_icon {
+  position: absolute;
+  top: 45px;
+  left: 0px;
+}
+
+.hashtag {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 2px 8px;
+  line-height: 28px;
+  border: 1px solid #405f87;
+  border-radius: 20px;
+  color: #405f87;
+  background-color: #fff;
+}
+
+.hashtag:hover {
+  transition: 0.3s all;
+  color: #fff;
+  background-color: #405f87;
+}
+
+.hashtag_list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.hashtag_list li {
+  margin-right: 6px;
+}
+
+.go_page_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding: 100px 0;
+}
+
+.go_page_inner ul {
+  margin: auto;
+  width: 76px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.go_page_inner p {
+  line-height: 28px;
+  color: #6ab69b;
+}
+
+footer {
+  background-color: #405f87;
+  color: #fff;
+}
+
+.footer_inner {
+  padding: 40px 0;
+}
+
+.footer_left {
+  float: left;
+}
+
+.footer_left li {
+  float: left;
+  margin-right: 10px;
+}
+
+.footer_logo {
+  padding: 20px 0;
+}
+
+.footer_left p {
+  font-size: 14px;
+}
+
+.footer_right {
+  float: right;
+  text-align: right;
+}
+
+.footer_sns li {
+  float: left;
+  margin-left: 20px;
+  opacity: 0.5;
+}
+
+.footer_sns li:hover {
+  opacity: 1;
+}
+
+.footer_right h3 {
+  padding-top: 65px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.footer_right h2 {
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+.footer_right p {
+  padding-top: 14px;
+  font-size: 14px;
+}

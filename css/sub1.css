@@ -1,0 +1,816 @@
+@charset "utf-8";
+
+/*디자인하우스체*/
+@font-face {
+  font-family: "designhouseOTFLight00";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/designhouseOTFLight00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*noto sans*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+body {
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  line-height: 26px;
+  min-width: 1450px;
+  color: #2d2d2d;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+header {
+  background-color: #fff;
+  /*box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);*/
+  border-bottom: #cecece 1px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.header_inner {
+  margin: 0 auto;
+  width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.header_inner > ul {
+  display: flex;
+}
+
+#gnb {
+  text-align: center;
+}
+
+#gnb > li {
+  height: 100px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+#gnb > li > a:hover {
+  color: #6ab69b;
+}
+
+.sub > li {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.sub {
+  position: absolute;
+  top: 100%;
+  /*포지션의 기준이 된 gnb>li높이 바로 밑으로 간다.*/
+  left: 0;
+  width: 100%;
+  /*포지션 앱솔루트 사용으로, sub가 가진 한줄 전체를 차지하는 속성이 사라져서 다시 지정해줌.*/
+  z-index: 40;
+}
+
+#gnb > li {
+  position: relative;
+  /*sub포지션의 기준*/
+}
+
+.sub > li {
+  color: #fff;
+  padding: 16px 0;
+}
+
+.sub > li:hover {
+  color: #6ab69b;
+}
+
+.sub {
+  display: none;
+  /*sub가 html에 존재하지 않는것처럼 사라지게 해줌.*/
+}
+
+.sub_box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 290px;
+  background-color: #405f87e0;
+  z-index: 30;
+  display: none;
+}
+
+.sub_box_inner {
+  margin: 0 auto;
+  padding: 18px 0px;
+  width: 1320px;
+}
+
+.sub_box_inner ul {
+  display: flex;
+  margin-right: 350px;
+  justify-content: flex-end;
+}
+
+.sub_box_inner li {
+  margin-left: 18px;
+}
+
+.header_inner .go_btn li {
+  padding: 0 10px;
+}
+
+.logo {
+  float: left;
+}
+
+a#top_btn {
+  position: fixed;
+  bottom: 50px;
+  right: 2%;
+  display: none;
+  width: 65px;
+  height: 65px;
+  padding-top: 18px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  z-index: 999;
+  border: 1px solid #405f87;
+  background-color: #fff;
+  color: #405f87;
+}
+
+a#top_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+#container {
+  background-color: #fff;
+}
+
+.mb_inner,
+.brand_story_inner,
+.bi_inner,
+.footer_inner,
+.signature_inner,
+.brandcolor_inner,
+.graphicicon_inner,
+.process_inner,
+.volunteer_inner,
+.location_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding: 80px 0;
+}
+
+.mb {
+  margin-top: 100px;
+  /*fixde된 헤더의 높이만큼 밑으로 내려서 헤더와 배너가 겹치지 않게 설정한다.*/
+  width: 100%;
+  background: url(../images/brand_banner.png) no-repeat top;
+  height: 660px;
+}
+
+.mb_text {
+  text-align: left;
+  color: #fff;
+}
+
+.mb_text h2 {
+  padding: 120px 0 0 35px;
+  font-size: 36px;
+  line-height: 52px;
+  font-weight: normal;
+}
+
+.mb_text p {
+  padding: 24px 0 0 35px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.under_line {
+  margin: 30px 0 110px 0;
+  width: 130px;
+  height: 1px;
+  background-color: #2d2d2d;
+}
+
+.brand_story_inner > h2 {
+  padding-top: 90px;
+}
+
+.brand_story_inner ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.brand_story_inner li {
+  float: left;
+  width: 420px;
+  height: 560px;
+  text-align: left;
+  margin: 30px 30px 0 0;
+}
+
+.brand_story_inner .last {
+  margin-right: 0px;
+}
+
+#brand_story h3 {
+  padding: 64px 0 36px 0;
+  font-size: 28px;
+  line-height: 44px;
+  font-weight: 500;
+}
+
+#brand_story span {
+  color: #405f87;
+}
+
+.brand_story_inner > li > p {
+  font-size: 24px;
+}
+
+.brand_story_banner {
+  margin: 70px 0;
+  height: 420px;
+  background: url(../images/brand_bg.png) no-repeat top;
+  text-align: center;
+}
+
+.brand_story_banner h3 {
+  padding: 150px 0;
+}
+
+.bi_inner .under_line {
+  margin-bottom: 60px;
+}
+
+.bi_inner ul {
+  padding: 120px 0;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.bi_inner li > div {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 55px solid #405f87;
+  box-sizing: content-box;
+}
+
+.bi_inner li > .green {
+  border: 55px solid #6ab69b;
+}
+
+.bi_inner img {
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.bi_inner li:hover img {
+  opacity: 1;
+  transition: 0.5s all;
+}
+
+.bi_inner li:hover > div {
+  border: 55px solid #fff;
+}
+
+.bi_inner li p {
+  margin-top: 30px;
+}
+
+.bi_inner .plus {
+  padding: 112px 0;
+  font-size: 32px;
+}
+
+.circle {
+  position: relative;
+}
+
+.bg_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bi_inner li:hover .bg_text {
+  animation: rotation 12s linear infinite;
+}
+
+#signature {
+  background-color: #e8f5f7;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #405f87;
+}
+
+.signature_inner p,
+.brandcolor_inner p,
+.graphicicon_inner p {
+  padding-top: 20px;
+}
+
+.sign_box_list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign_box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 640px;
+  margin-top: 30px;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: inset 3px 3px 2px rgba(62, 94, 134, 0.35);
+}
+
+.sign_box p {
+  width: 108px;
+  height: 30px;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 16px;
+  line-height: 18px;
+  border-radius: 25px;
+  background-color: #6ab69b;
+  color: #fff;
+}
+
+.sign_box img {
+  padding: 35px;
+}
+
+.mono p {
+  background-color: #636363;
+}
+
+.brandcolor_inner p {
+  padding-top: 20px;
+}
+
+.bc_circle_list {
+  padding: 120px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bc_circle {
+  position: relative;
+  z-index: 5;
+}
+
+.text_circle {
+  position: relative;
+  width: 470px;
+  height: 470px;
+  padding: 170px 130px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #405f87;
+}
+
+.bc_circle .blue {
+  margin-top: 40px;
+}
+
+.bc_circle .green {
+  margin-top: 140px;
+}
+
+.solid_circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.text_circle > .blue {
+  position: absolute;
+  top: -20%;
+  left: 60%;
+  background-color: #a2d3f2;
+  z-index: -1;
+}
+
+.bc_circle > .blue:hover {
+  background: url(../images/brandcolor_blue.png);
+}
+
+.text_circle > .green {
+  position: absolute;
+  top: 30%;
+  left: -10%;
+  background-color: #cbe8de;
+  z-index: -1;
+}
+
+.bc_circle > .green {
+  background-color: #6ab69b;
+}
+
+.bc_circle > .green:hover {
+  background: url(../images/brandcolor_green.png);
+}
+
+.text_circle h3,
+.text_circle p {
+  color: #fff;
+  text-shadow: 2px 2px 1px #2d2d2d;
+}
+
+.text_circle p {
+  line-height: 36px;
+}
+
+#graphicicon {
+  background-color: #e4f3ee;
+}
+
+.gi {
+  margin-top: 50px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: inset 3px 3px 2px rgba(70, 144, 118, 0.35);
+}
+
+.gi ul {
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.graphicpattern {
+  margin-top: 70px;
+}
+
+.pattern {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pattern li {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: inset 3px 3px 2px rgba(70, 144, 118, 0.35);
+}
+
+.process_banner {
+  width: 100%;
+  height: 320px;
+  background: url(../images/brand_sb_01.png) no-repeat center top fixed;
+}
+
+.process_banner h2,
+.volunteer_banner h2,
+.location_banner h2 {
+  padding: 140px 0;
+  text-align: center;
+  font-size: 48px;
+  font-family: "designhouseOTFLight00";
+  font-weight: bold;
+  color: #fff;
+  text-shadow: -1px 0 #6ab69b, 0 1px #6ab69b, 1px 0 #6ab69b, 0 -1px #6ab69b;
+}
+
+.volunteer_banner h2 {
+  text-shadow: -1px 0 #405f87, 0 1px #405f87, 1px 0 #405f87, 0 -1px #405f87;
+}
+
+.pro_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pro_list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.process_inner .next {
+  padding: 120px 0;
+}
+
+.step_img {
+  width: 279px;
+  height: 279px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.step_img > img {
+  width: 279px;
+  height: 279px;
+  border-radius: 50%;
+}
+
+.step_img > img:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.5s all;
+}
+
+.step_text h3 {
+  padding-top: 50px;
+  font-size: 36px;
+  font-family: "designhouseOTFLight00";
+  font-weight: bold;
+}
+
+.step_text h3 span {
+  color: #405f87;
+}
+
+.step_text h5 {
+  padding: 10px 0 20px 0;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.volunteer_banner {
+  width: 100%;
+  height: 320px;
+  background: url(../images/brand_sb_02.png) no-repeat center top fixed;
+}
+
+.vol_story {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.vol_img {
+  width: 870px;
+  height: 434px;
+  text-align: center;
+}
+
+.vol_img h3 {
+  margin-top: 160px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.vol_img h5 {
+  font-size: 30px;
+  font-weight: lighter;
+  color: #fff;
+}
+
+.vol_img span {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 72px;
+  color: #fff;
+}
+
+.volunteer_inner .bg1 {
+  background: url(../images/vol_01.png) no-repeat center;
+}
+
+.volunteer_inner .bg2 {
+  background: url(../images/vol_02.png) no-repeat center;
+}
+
+.vol_text {
+  width: 417px;
+  height: 630px;
+  padding-top: 90px;
+}
+
+.color_box {
+  float: left;
+  width: 6px;
+  height: 434px;
+  background-color: #6ab69b;
+}
+
+.text_box {
+  margin-left: 18px;
+}
+
+.text_box h4 {
+  font-size: 28px;
+  line-height: 44px;
+}
+
+.text_box .point {
+  color: #405f87;
+}
+
+.text_box .small {
+  font-size: 16px;
+  font-weight: lighter;
+  color: #c9c9c9;
+}
+
+.text_box p {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 44px;
+}
+
+.vol_num_list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 230px;
+}
+
+.vol_num {
+  width: 480px;
+  height: 493px;
+  text-align: center;
+}
+
+.vol_num h5 {
+  padding-top: 360px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.vol_num .line {
+  margin: auto;
+  width: 130px;
+  height: 1px;
+  background-color: #fff;
+}
+
+.vol_num p {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.vol_num_list .bg3 {
+  background: url(../images/vol_03.png) no-repeat center;
+}
+
+.vol_num_list .bg4 {
+  background: url(../images/vol_04.png) no-repeat center;
+}
+
+.vol_num_list .bg5 {
+  background: url(../images/vol_05.png) no-repeat center;
+}
+
+.vol_num_list .bg6 {
+  background: url(../images/vol_06.png) no-repeat center;
+}
+
+.location_banner {
+  width: 100%;
+  height: 320px;
+  background: url(../images/brand_sb_03.png) no-repeat center top fixed;
+}
+
+.location_inner {
+  display: flex;
+}
+
+.loc_map {
+  float: left;
+}
+
+.loc_text {
+  width: 448px;
+  height: 567px;
+  background: url(../images/loc_bg.png) #6ab69b;
+  padding: 110px 35px;
+  box-sizing: border-box;
+}
+
+.loc_text h3 {
+  font-size: 28px;
+  line-height: 36px;
+  color: #fff;
+}
+
+.loc_text p {
+  font-size: 24px;
+  line-height: 36px;
+  color: #fff;
+  font-weight: lighter;
+}
+
+footer {
+  background-color: #405f87;
+  color: #fff;
+}
+
+.footer_inner {
+  padding: 40px 0;
+}
+
+.footer_left {
+  float: left;
+}
+
+.footer_left li {
+  float: left;
+  margin-right: 10px;
+}
+
+.footer_logo {
+  padding: 20px 0;
+}
+
+.footer_left p {
+  font-size: 14px;
+}
+
+.footer_right {
+  float: right;
+  text-align: right;
+}
+
+.footer_sns li {
+  float: left;
+  margin-left: 20px;
+  opacity: 0.5;
+}
+
+.footer_sns li:hover {
+  opacity: 1;
+}
+
+.footer_right h3 {
+  padding-top: 65px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.footer_right h2 {
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+.footer_right p {
+  padding-top: 14px;
+  font-size: 14px;
+}

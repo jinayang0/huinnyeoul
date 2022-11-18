@@ -1,0 +1,403 @@
+@charset "utf-8";
+
+/*디자인하우스체*/
+@font-face {
+  font-family: "designhouseOTFLight00";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/designhouseOTFLight00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*noto sans*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+body {
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  line-height: 26px;
+  min-width: 1450px;
+  color: #2d2d2d;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+header {
+  background-color: #fff;
+  /*box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);*/
+  border-bottom: #cecece 1px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.header_inner {
+  margin: 0 auto;
+  width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.header_inner > ul {
+  display: flex;
+}
+
+#gnb {
+  text-align: center;
+}
+
+#gnb > li {
+  height: 100px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+#gnb > li > a:hover {
+  color: #6ab69b;
+}
+
+.sub > li {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.sub {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 40;
+}
+
+#gnb > li {
+  position: relative;
+}
+
+.sub > li {
+  color: #fff;
+  padding: 16px 0;
+}
+
+.sub > li:hover {
+  color: #6ab69b;
+}
+
+.sub {
+  display: none;
+}
+
+.sub_box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 290px;
+  background-color: #405f87e0;
+  z-index: 30;
+  display: none;
+}
+
+.sub_box_inner {
+  margin: 0 auto;
+  padding: 18px 0px;
+  width: 1320px;
+}
+
+.sub_box_inner ul {
+  display: flex;
+  margin-right: 350px;
+  justify-content: flex-end;
+}
+
+.sub_box_inner li {
+  margin-left: 18px;
+}
+
+.header_inner .go_btn li {
+  padding: 0 10px;
+}
+
+.logo {
+  float: left;
+}
+
+a#top_btn {
+  position: fixed;
+  bottom: 50px;
+  right: 2%;
+  display: none;
+  width: 65px;
+  height: 65px;
+  padding-top: 18px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  z-index: 999;
+  border: 1px solid #405f87;
+  background-color: #fff;
+  color: #405f87;
+}
+
+a#top_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.test_main {
+  width: 100%;
+  height: 1080px;
+}
+
+.test_main {
+  margin-top: 100px;
+  width: 100%;
+  height: 1120px;
+  background: url(../images/test_bg.png) no-repeat top;
+}
+
+.test_main_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.test_main_inner h2 {
+  padding: 80px 0 30px 0;
+  font-size: 36px;
+  color: #fff;
+}
+
+.test_main_inner p {
+  padding-bottom: 45px;
+  color: #fff;
+}
+
+.test_main_inner a {
+  margin-top: 45px;
+  padding: 8px 30px;
+  border-radius: 20px;
+  background-color: #405f87;
+  color: #fff;
+}
+
+.test_main_inner a:hover {
+  transition: 0.3s all;
+  background-color: #fff;
+  color: #405f87;
+}
+
+.test_step {
+  margin-top: 100px;
+  width: 100%;
+  height: 900px;
+}
+
+.test_step_inner {
+  margin: 0 auto;
+  width: 1320px;
+  text-align: center;
+  position: relative;
+}
+
+.test_step_inner h1 {
+  padding: 120px 0px 110px 0;
+  font-weight: normal;
+}
+
+.test_step_inner .test_list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.test_list img:hover,
+.test_img_item:hover {
+  opacity: 0.5;
+  transition: 0.3s all;
+}
+
+.test_list p {
+  margin-top: 35px;
+}
+
+.test_list span,
+.test_img_item_list span {
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.test_step_inner .test_item_list,
+.test_step_inner .test_img_item_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.test_item {
+  display: block;
+  width: 370px;
+  padding: 28px 86px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background-color: #6ab69b;
+  color: #fff;
+}
+
+.test_item:hover {
+  transition: 0.3s all;
+  background-color: #cecece;
+  color: #fff;
+}
+
+.test_img_item {
+  display: block;
+  width: 370px;
+  height: 120px;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border-radius: 15px;
+  color: #fff;
+}
+
+.item1 {
+  background: url(../images/test_img_item_morning.png) no-repeat center;
+}
+
+.item2 {
+  background: url(../images/test_img_item_night.png) no-repeat center;
+}
+
+.item3 {
+  background: url(../images/test_img_item_allday.png) no-repeat center;
+}
+
+.result_text {
+  margin-bottom: 30px;
+}
+
+.test_step_inner form {
+  display: flex;
+  justify-content: center;
+}
+
+.test_step_inner form p {
+  margin-right: 20px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1320px;
+  height: 500px;
+  background-color: #fff;
+}
+
+.spinner {
+  margin-top: 200px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #405f87;
+  border-color: #405f87 transparent transparent;
+  border-radius: 50%;
+  animation: spin 1.5s ease-out infinite;
+}
+
+footer {
+  background-color: #405f87;
+  color: #fff;
+}
+
+.footer_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding: 40px 0;
+}
+
+.footer_left {
+  float: left;
+}
+
+.footer_left li {
+  float: left;
+  margin-right: 10px;
+}
+
+.footer_logo {
+  padding: 20px 0;
+}
+
+.footer_left p {
+  font-size: 14px;
+}
+
+.footer_right {
+  float: right;
+  text-align: right;
+}
+
+.footer_sns li {
+  float: left;
+  margin-left: 20px;
+  opacity: 0.5;
+}
+
+.footer_sns li:hover {
+  opacity: 1;
+}
+
+.footer_right h3 {
+  padding-top: 65px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.footer_right h2 {
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+.footer_right p {
+  padding-top: 14px;
+  font-size: 14px;
+}

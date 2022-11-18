@@ -1,0 +1,416 @@
+@charset "utf-8";
+
+/*디자인하우스체*/
+@font-face {
+  font-family: "designhouseOTFLight00";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/designhouseOTFLight00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*noto sans*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+body {
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  line-height: 26px;
+  min-width: 1450px;
+  color: #2d2d2d;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+header {
+  background-color: #fff;
+  /*box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);*/
+  border-bottom: #cecece 1px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.header_inner {
+  margin: 0 auto;
+  width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.header_inner > ul {
+  display: flex;
+}
+
+#gnb {
+  text-align: center;
+}
+
+#gnb > li {
+  height: 100px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+#gnb > li > a:hover {
+  color: #6ab69b;
+}
+
+.sub > li {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.sub {
+  position: absolute;
+  top: 100%;
+  /*포지션의 기준이 된 gnb>li높이 바로 밑으로 간다.*/
+  left: 0;
+  width: 100%;
+  /*포지션 앱솔루트 사용으로, sub가 가진 한줄 전체를 차지하는 속성이 사라져서 다시 지정해줌.*/
+  z-index: 40;
+}
+
+#gnb > li {
+  position: relative;
+  /*sub포지션의 기준*/
+}
+
+.sub > li {
+  color: #fff;
+  padding: 16px 0;
+}
+
+.sub > li:hover {
+  color: #6ab69b;
+}
+
+.sub {
+  display: none;
+  /*sub가 html에 존재하지 않는것처럼 사라지게 해줌.*/
+}
+
+.sub_box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 290px;
+  background-color: #405f87e0;
+  z-index: 30;
+  display: none;
+}
+
+.sub_box_inner {
+  margin: 0 auto;
+  padding: 18px 0px;
+  width: 1320px;
+}
+
+.sub_box_inner ul {
+  display: flex;
+  margin-right: 350px;
+  justify-content: flex-end;
+}
+
+.sub_box_inner li {
+  margin-left: 18px;
+}
+
+.header_inner .go_btn li {
+  padding: 0 10px;
+}
+
+.logo {
+  float: left;
+}
+
+a#top_btn {
+  position: fixed;
+  bottom: 50px;
+  right: 2%;
+  display: none;
+  width: 65px;
+  height: 65px;
+  padding-top: 18px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  z-index: 999;
+  border: 1px solid #405f87;
+  background-color: #fff;
+  color: #405f87;
+}
+
+a#top_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+#container {
+  background-color: #fff;
+}
+
+.mb_inner,
+.footer_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding: 80px 0;
+}
+
+.mb {
+  margin-top: 100px;
+  width: 100%;
+  background: url(../images/event_banner.png) no-repeat top;
+  height: 660px;
+}
+
+.mb_text {
+  text-align: left;
+  color: #fff;
+}
+
+.mb_text h2 {
+  padding: 120px 0 0 35px;
+  font-size: 36px;
+  line-height: 52px;
+  font-weight: normal;
+}
+
+.mb_text p {
+  padding: 24px 0 0 35px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.mn_btn_list_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding-top: 80px;
+}
+
+.btn_list {
+  margin: 0 auto;
+  width: 814px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.btn_list a {
+  padding: 8px 40px;
+  border: 1px solid #405f87;
+  border-radius: 25px;
+  background-color: #fff;
+  color: #405f87;
+}
+
+.btn_list a:hover {
+  background-color: #405f87;
+  color: #fff;
+}
+
+.shop_list_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding-bottom: 20px;
+}
+
+.btn_list .active {
+  background-color: #405f87;
+  color: #fff;
+}
+
+.under_line {
+  width: 1320px;
+  height: 1px;
+  background-color: #405f87;
+  margin-top: 50px;
+}
+
+.products_list {
+  margin: 0 auto;
+  width: 1320px;
+}
+
+.products_list li {
+  float: left;
+  width: 556px;
+  margin: 80px 52px 0px 52px;
+}
+
+.event_box {
+  position: relative;
+}
+
+.products_list h5 {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.products_list p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #999;
+}
+
+.black_box {
+  width: 100%;
+  height: 100%;
+  padding: 68px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.black_box p {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.go_page_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding: 100px 0;
+}
+
+.go_page_inner ul {
+  margin: auto;
+  width: 76px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.go_page_inner p {
+  line-height: 28px;
+  color: #6ab69b;
+}
+
+footer {
+  background-color: #405f87;
+  color: #fff;
+}
+
+.footer_inner {
+  padding: 40px 0;
+}
+
+.footer_left {
+  float: left;
+}
+
+.footer_left li {
+  float: left;
+  margin-right: 10px;
+}
+
+.footer_logo {
+  padding: 20px 0;
+}
+
+.footer_left p {
+  font-size: 14px;
+}
+
+.footer_right {
+  float: right;
+  text-align: right;
+}
+
+.footer_sns li {
+  float: left;
+  margin-left: 20px;
+  opacity: 0.5;
+}
+
+.footer_sns li:hover {
+  opacity: 1;
+}
+
+.footer_right h3 {
+  padding-top: 65px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.footer_right h2 {
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+.footer_right p {
+  padding-top: 14px;
+  font-size: 14px;
+}
+
+/*팝업창 css*/
+.popup {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none;
+}
+
+.popup_box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  font-size: 24px;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  right: -60px;
+}
+
+.close:hover {
+  transition: 0.5s all;
+  background-color: #405f87;
+}

@@ -1,0 +1,693 @@
+@charset "utf-8";
+
+/*디자인하우스체*/
+@font-face {
+  font-family: "designhouseOTFLight00";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/designhouseOTFLight00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*noto sans*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+@keyframes rotate {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: -100%;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+body {
+  font-family: "Noto Sans KR";
+  font-size: 16px;
+  line-height: 26px;
+  min-width: 1450px;
+  color: #2d2d2d;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+header {
+  background-color: #fff;
+  /*box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);*/
+  border-bottom: #cecece 1px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.header_inner {
+  margin: 0 auto;
+  width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.header_inner > ul {
+  display: flex;
+}
+
+#gnb {
+  text-align: center;
+}
+
+#gnb > li {
+  height: 100px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 35px;
+  box-sizing: border-box;
+}
+
+#gnb > li > a:hover {
+  color: #6ab69b;
+}
+
+.sub > li {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.sub {
+  position: absolute;
+  top: 100%;
+  /*포지션의 기준이 된 gnb>li높이 바로 밑으로 간다.*/
+  left: 0;
+  width: 100%;
+  /*포지션 앱솔루트 사용으로, sub가 가진 한줄 전체를 차지하는 속성이 사라져서 다시 지정해줌.*/
+  z-index: 40;
+}
+
+#gnb > li {
+  position: relative;
+  /*sub포지션의 기준*/
+}
+
+.sub > li {
+  color: #fff;
+  padding: 16px 0;
+}
+
+.sub > li:hover {
+  color: #6ab69b;
+}
+
+.sub {
+  display: none;
+  /*sub가 html에 존재하지 않는것처럼 사라지게 해줌.*/
+}
+
+.sub_box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 290px;
+  background-color: #405f87e0;
+  z-index: 30;
+  display: none;
+}
+
+.sub_box_inner {
+  margin: 0 auto;
+  padding: 18px 0px;
+  width: 1320px;
+}
+
+.sub_box_inner ul {
+  display: flex;
+  margin-right: 350px;
+  justify-content: flex-end;
+}
+
+.sub_box_inner li {
+  margin-left: 18px;
+}
+
+.header_inner .go_btn li {
+  padding: 0 10px;
+}
+
+.logo {
+  float: left;
+}
+
+a#top_btn {
+  position: fixed;
+  bottom: 50px;
+  right: 2%;
+  display: none;
+  width: 65px;
+  height: 65px;
+  padding-top: 18px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  z-index: 999;
+  border: 1px solid #405f87;
+  background-color: #fff;
+  color: #405f87;
+}
+
+a#top_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.mb {
+  margin-top: 100px;
+  /*fixde된 헤더의 높이만큼 밑으로 내려서 헤더와 배너가 겹치지 않게 설정한다.*/
+}
+
+.mb img {
+  width: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+}
+
+.swiper-pagination span {
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  background: #405f87;
+}
+
+#container {
+  background-color: #fff;
+}
+
+.best_inner,
+.fb_huinnyeoul_inner,
+.pd_inner,
+.sns_inner,
+.help_inner,
+.footer_inner {
+  margin: 0 auto;
+  width: 1320px;
+  padding: 80px 0;
+}
+
+.best li {
+  float: left;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+
+.best li.list_last {
+  margin-right: 0px;
+}
+
+.best li:nth-child(3) {
+  margin-right: 0px;
+}
+
+.best_goods {
+  width: 300px;
+  height: 388px;
+}
+
+.best_text {
+  width: 640px;
+  height: 388px;
+  margin-right: 27px;
+  text-align: center;
+  padding: 80px;
+  box-sizing: border-box;
+}
+
+.best_text h2 {
+  font-size: 32px;
+  margin-bottom: 35px;
+}
+
+.best_text span {
+  font-family: "designhouseOTFLight00";
+  font-weight: 900;
+}
+
+.best_text .huinnyeoul {
+  line-height: 62px;
+  color: #405f87;
+}
+
+.best_text p {
+  font-size: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #2d2d2d;
+  color: #405f87;
+  font-weight: 700;
+}
+
+.price_box {
+  margin: 24px 0 0 15px;
+}
+
+.price_box p {
+  font-size: 16px;
+}
+
+.price_box .price {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.price_box .percent {
+  color: #405f87;
+}
+
+.price_box .cost {
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: line-through;
+  color: #cecece;
+}
+
+.best ul li:nth-child(1) {
+  position: relative;
+  /*new, 시즌한정 아이콘 포지션의 기준*/
+}
+
+.best_icon {
+  position: absolute;
+  top: 15px;
+  left: 0px;
+}
+
+.sale_icon {
+  position: absolute;
+  top: 45px;
+  left: 0px;
+}
+
+.fb_huinnyeoul {
+  height: 350px;
+  background: url(../images/main_fb_01.png) no-repeat center top fixed;
+}
+
+.fb_huinnyeoul_inner {
+  margin-top: 120px;
+  padding: 57px 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.title_text img {
+  vertical-align: bottom;
+}
+
+.title_text p {
+  font-size: 28px;
+  font-family: "designhouseOTFLight00";
+  font-weight: 900;
+  display: inline-block;
+}
+
+.title_text span {
+  color: #405f87;
+}
+
+.fb_huinnyeoul_inner > p {
+  padding: 20px 0;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.fb_huinnyeoul_inner a {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 10px 30px;
+  border-radius: 25px;
+  background-color: #405f87;
+  color: #fff;
+}
+
+.fb_huinnyeoul_inner a:hover {
+  transition: 0.5s all;
+  background-color: #fff;
+  color: #405f87;
+}
+
+.under_line {
+  margin: 30px 0 110px 0;
+  width: 130px;
+  height: 1px;
+  background-color: #2d2d2d;
+}
+
+.pd {
+  padding-top: 140px;
+  padding-bottom: 100px;
+}
+
+.pd_cont {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.pd_cont li {
+  display: inline-block;
+}
+
+.pd_cont h3 {
+  margin: 40px 0 20px 0;
+  padding: 12px 25px;
+  border-radius: 25px;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 400;
+  background-color: #405f87;
+  color: #fff;
+}
+
+.pd_cont .middle {
+  background-color: #6ab69b;
+}
+
+.pd_cont p {
+  font-size: 16px;
+}
+
+.banner_sale {
+  margin-top: 230px;
+}
+
+.review {
+  padding: 80px 0;
+}
+
+.review_inner {
+  margin: 0 auto;
+  width: 1320px;
+}
+
+.review_inner .under_line {
+  margin: 30px 0 65px 0;
+}
+
+.review_box {
+  height: 800px;
+}
+
+.bg_review {
+  background: url(../images/bg_review.png) no-repeat center;
+  width: 100%;
+  height: 290px;
+}
+
+.review_cont {
+  padding-top: 130px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.review_img {
+  overflow: hidden;
+  border-radius: 150px;
+}
+
+.review_img > img {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+}
+
+.review_img > img:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.5s all;
+}
+
+.review_cont h3 {
+  margin-top: 70px;
+  font-size: 72px;
+  line-height: 72px;
+  color: #dcdcdc;
+}
+
+.review_text {
+  width: 280px;
+  padding: 0 10px;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.review_go {
+  margin-top: 20px;
+  padding: 24px 8px;
+  text-align: right;
+  box-sizing: border-box;
+  border-top: 1px solid #dcdcdc;
+}
+
+.review_go .review_thumb {
+  float: left;
+}
+
+.review_go p {
+  font-size: 14px;
+}
+
+.review_go span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #405f87;
+}
+
+.review_go a > img {
+  margin-top: -3px;
+}
+
+.makesoap {
+  height: 350px;
+  background: url(../images/main_fb_02.png) no-repeat center top fixed;
+}
+
+.makesoap_inner {
+  margin-top: 120px;
+  padding: 100px 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.title_text {
+  font-size: 28px;
+  font-family: "designhouseOTFLight00";
+  font-weight: 900;
+  display: inline-block;
+}
+
+.makesoap_inner > p {
+  padding: 20px 0;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.makesoap_inner a {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 10px 30px;
+  border-radius: 25px;
+  background-color: #405f87;
+  color: #fff;
+}
+
+.makesoap_inner a:hover {
+  transition: 0.5s all;
+  background-color: #fff;
+  color: #405f87;
+}
+
+.sns_inner {
+  padding-top: 200px;
+  padding-bottom: 0px;
+}
+
+.sns_inner .under_line {
+  margin: 30px 0 65px 0;
+}
+
+.sns_slide {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 200px;
+}
+
+.sns_slide_inner {
+  display: flex;
+  width: 200%;
+  animation: rotate 15s linear infinite;
+}
+
+.sns_slide_inner ul {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.sns_slide_inner:hover {
+  animation-play-state: paused;
+}
+
+.sns_circle li {
+  width: 266px;
+  height: 266px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.sns_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 266px;
+  padding: 70px 45px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  opacity: 0;
+}
+
+.sns_text:hover {
+  transition: 0.3s all;
+  opacity: 1;
+}
+
+.help_inner {
+  margin-bottom: 100px;
+}
+
+.help_inner ul {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.help_inner li > a:hover {
+  border: 1px solid #6ab69b;
+  background-color: #6ab69b;
+}
+
+.help_inner li > a {
+  display: inline-block;
+  width: 163px;
+  height: 163px;
+  box-sizing: border-box;
+  padding-top: 33px;
+  text-align: center;
+  border-radius: 15%;
+  border: 1px solid #cecece;
+}
+
+.help_inner h3 {
+  margin-top: 42px;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+.help_inner p {
+  margin-top: 22px;
+  font-size: 14px;
+}
+
+footer {
+  background-color: #405f87;
+  color: #fff;
+}
+
+.footer_inner {
+  padding: 40px 0;
+}
+
+.footer_left {
+  float: left;
+}
+
+.footer_left li {
+  float: left;
+  margin-right: 10px;
+}
+
+.footer_logo {
+  padding: 20px 0;
+}
+
+.footer_left p {
+  font-size: 14px;
+}
+
+.footer_right {
+  float: right;
+  text-align: right;
+}
+
+.footer_sns li {
+  float: left;
+  margin-left: 20px;
+  opacity: 0.5;
+}
+
+.footer_sns li:hover {
+  opacity: 1;
+}
+
+.footer_right h3 {
+  padding-top: 65px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.footer_right h2 {
+  padding-top: 10px;
+  font-size: 30px;
+}
+
+.footer_right p {
+  padding-top: 14px;
+  font-size: 14px;
+}
